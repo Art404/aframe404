@@ -1,0 +1,21 @@
+<a-scene id="aframe-project" 
+  auto-enter-vr 
+  inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+  <!-- assets + templates -->
+  <a-assets id="assets">
+    <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+  </a-assets>
+
+  <!-- camera + cursor -->
+  {{> camera}}
+
+  <!-- sky -->
+  <a-gradient-sky material="shader: gradient; topColor: 235 210 243; bottomColor: 180 251 255;"></a-gradient-sky>
+
+  <!-- cube grid -->
+  <a-entity id="grid" layout="type: box; columns: 3; margin: 1; plane: xy" position="-1 -1 -2">
+    {{#times 9}}
+      <a-entity class="cube" geometry="primitive: box; depth: 0.5; height: 0.5; width: 0.5"></a-entity>
+    {{/times}}
+  </a-entity>
+</a-scene>
